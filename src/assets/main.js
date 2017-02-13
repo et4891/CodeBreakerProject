@@ -21,6 +21,11 @@ function setHiddenFields() {
     return answer;
 }
 
+
+/*
+* setMessage()
+* @param message            - insert the message into the message div
+* */
 function setMessage(message) {
     return document.getElementById('message').innerHTML = message;
 }
