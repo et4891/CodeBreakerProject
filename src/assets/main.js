@@ -29,3 +29,17 @@ function setHiddenFields() {
 function setMessage(message) {
     return document.getElementById('message').innerHTML = message;
 }
+
+
+/*
+* validateInput()
+* @param input              - input of the guesses
+* validate if input is exactly 4 characters else return a message with false
+* */
+function validateInput(input) {
+    if(input.length !== 4){
+        setMessage('Guesses must be exactly 4 characters long.');
+        return false;
+    }
+    return true;
+}
