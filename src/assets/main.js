@@ -13,6 +13,8 @@ function guess() {
         return;
     }
     attempt.value++;
+
+    getResults(input.value);
 }
 
 //implement new functions here
@@ -54,6 +56,28 @@ function validateInput(input) {
     return true;
 }
 
-function getResults() {
 
+
+function getResults(input) {
+    let result = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+    let correct = '<span class="glyphicon glyphicon-ok"></span>';
+    let transfer = '<span class="glyphicon glyphicon-transfer"></span>';
+    let remove = '<span class="glyphicon glyphicon-remove"></span>';
+    let count = 0;
+
+    for(let i = 0; i < answer.value.length; i++){
+        if(input[i] == answer.value[i]){
+            count++;
+            result += correct;
+        }else if (answer.value.indexOf(input[i]) > -1){
+            console.log(answer.value.indexOf(input[i]));
+            result += transfer;
+        }else{
+            result += remove;
+        }
+    }
+
+    document.getElementById('results').innerHTML = result;
+
+    return (count == 4);
 }
