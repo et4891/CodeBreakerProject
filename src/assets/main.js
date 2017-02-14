@@ -3,7 +3,12 @@ let attempt = document.getElementById('attempt');
 
 function guess() {
     let input = document.getElementById('user-guess');
+    console.log(validateInput(input.value));
     //add functionality to guess function here
+    if(!validateInput(input.value)){
+        return false;
+    }
+    attempt.value++;
 }
 
 //implement new functions here
